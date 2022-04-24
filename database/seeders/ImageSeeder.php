@@ -4,9 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Company;
 
-class CompanySeeder extends Seeder
+class ImageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +14,6 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        // $companies  = Company::factory(Company::class, 10)->create();
+        //
     }
 }

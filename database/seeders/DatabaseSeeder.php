@@ -14,15 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // Datos de pruebas para companias
-        // \App\Models\Company::factory(100)->create();
-        
-        // Datos de pruebas para carros
-        // \App\Models\Car::factory(100)->create();
-
-        // Modelos y marcas de autos
-        // $this->call(MakeSeeder::class);
-        // $this->call(CarModelSeeder::class);
-        // $this->call(CarModelYearSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(SectionSeeder::class);
+        $this->call(ImageSeeder::class);
     }
 }
