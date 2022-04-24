@@ -18,6 +18,11 @@
     src: url(../fonts/montserrat/Montserrat-Bold.ttf)
 }
 
+@font-face {
+    font-family: gilroy-bold;
+    src: url(../fonts/gilroy/Gilroy-ExtraBold.woff);
+}
+
 * {
     margin: 0;
     padding: 0;

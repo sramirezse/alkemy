@@ -12,7 +12,7 @@
     -->
     <div class="logo">
       <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-        APPtolavado
+        Vacunas
       </a>
     </div>
     <div class="sidebar-wrapper">

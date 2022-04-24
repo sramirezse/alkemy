@@ -1,0 +1,287 @@
+@import url('../../node_modules/bootstrap/dist/css/bootstrap.css');
+p{
+    font-family: gilroy-bold;
+
+}
+.navbar {
+    background-color: white;
+    height: 130px;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.navbar-nav .nav-link {
+    color: #0b6b9b !important;
+    font-family: gilroy-bold;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.navbar-brand {
+    margin-left: 100px;
+}
+
+.bg-purple {
+    background-color: #f8f8f8;
+}
+
+.btn {
+    border-radius: 1rem !important;
+}
+
+.btn-warning {
+    background-color: #fb9f00;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2-h2 {
+    margin-top: 100px;
+    color: #6a4fa4;
+    text-align: center;
+    font-weight: 600;
+    max-width: 700px;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.section2 {
+    .card1 {
+        background: rgb(82, 24, 202);
+        background: linear-gradient(0deg, rgba(82, 24, 202, 1) 0%, rgba(116, 53, 249, 0.9093838218881303) 35%, rgba(116, 53, 249, 0.9457983877144608) 100%);
+    }
+
+    .card2 {
+        background: rgb(71, 188, 255);
+        background: linear-gradient(180deg, rgba(71, 188, 255, 1) 0%, rgba(71, 163, 255, 1) 35%, rgba(71, 163, 255, 0.9570028695071778) 100%);
+
+    }
+}
+
+.section2-card {
+    text-align: center;
+    padding: 20px;
+
+    h3 {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: white;
+        height: 80px;
+    }
+
+    span {
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    width: 270px;
+    height: 240px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+
+
+
+.section3 {
+    background-image: url("../../resources/images/home/section3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+
+    z-index: 1;
+
+    h3 {
+        color: #6acff9;
+        font-size: 2rem;
+        padding-top: 150px;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: 600;
+    }
+}
+
+.section3 {
+    .container {
+        max-width: 500px;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: 500;
+        text-align: left;
+
+        p {
+            color: #0b6b9b !important;
+
+        }
+
+        b {
+            color: #0f5f84;
+        }
+
+        mark {
+            background-color: #ade9ffac;
+            color: #84b2c2;
+        }
+    }
+}
+
+.section3-molecule {
+    margin-left: 100px;
+    z-index: 2;
+    position: absolute;
+    top: 190%;
+}
+
+.section4 {
+    margin-top: 100px;
+
+    h3 {
+        color: #6acff9;
+        font-size: 1.7rem;
+        font-weight: 600;
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+
+    }
+
+    h4 {
+        margin-top: 20px;
+    }
+
+    .container {
+        .section4-row {
+            .section4-card {
+                margin-top: 20px;
+                height: 400px;
+                margin: 20px;
+                border-radius: 15px;
+                padding: 30px;  
+                .paraph {   
+
+                    p {
+                        color: white;
+                        font-size: 1.6rem;
+                    }
+                }
+
+            }
+
+            .card1 {
+                background-image: url('../images/home/section4-card1.jpg');
+                background-size: cover;
+
+                h4 {
+                    color: #eeff34;
+                }
+
+                // button{
+                //     margin-top: 60px;
+                // }
+            }
+
+            .card2 {
+                background-image: url('../images/home/section4-card2.jpg');
+                background-size: cover;
+
+                h4 {
+                    color: #dfbb38;
+                }
+
+                // button{
+                //     margin-top: 130px;
+                // }
+            }
+        }
+    }
+
+
+
+
+}
+
+.section4-rows-icon {
+    width: 30px;
+    text-align: start !important;
+}
+.section4-girl{
+    z-index: 2;
+    position: relative;
+    bottom: 40px;
+    margin-left: 22%;
+}
+
+footer {
+    background-color: #ebebeb;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+
+    .footer-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    p {
+        color: #0b6b9b;
+        font-size: .7rem;
+        width: 600px;
+        line-height: .7em;
+    }
+
+
+}
+
+.social-icon {
+    width: 20px;
+}
+
+@media screen and (max-width: 1366px) {
+    .section3 {
+        height: 90vh;
+        background-position: center;
+    }
+
+    .section3-molecule {
+        top: 250% !important;
+
+    }
+    .section4-girl{
+        z-index: 2;
+        position: relative;
+        bottom: 45px;
+        margin-left: 17%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section3 {
+        height: 100vh;
+        padding: 20px;
+    }
+
+    .section3-molecule {
+        display: none;
+
+    }
+}
