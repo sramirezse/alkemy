@@ -230,23 +230,17 @@ p{
 }
 
 footer {
+    padding: 100px;
     background-color: #ebebeb;
     height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 20px;
 
-    .footer-row {
-        display: flex;
-        justify-content: space-between;
-    }
-
+    
     p {
         color: #0b6b9b;
         font-size: .7rem;
         width: 600px;
         line-height: .7em;
+        margin-left: 300px;
     }
 
 
@@ -308,11 +302,15 @@ footer {
         display: none;
 
     }
-    .footer{
-        
+    footer{
+        padding:30px;
         div{
-            max-width: 400px;
-            margin-left: 40px;
+            b{
+                p {
+                    margin-left: 0px;
+                    text-align: left;
+                }
+            }
         }
     }
 }

@@ -11466,22 +11466,16 @@ p {
 }
 
 footer {
+  padding: 100px;
   background-color: #ebebeb;
   height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 20px;
-}
-footer .footer-row {
-  display: flex;
-  justify-content: space-between;
 }
 footer p {
   color: #0b6b9b;
   font-size: 0.7rem;
   width: 600px;
   line-height: 0.7em;
+  margin-left: 300px;
 }
 
 .social-icon {
@@ -11541,8 +11535,11 @@ footer p {
     display: none;
   }
 
-  .footer div {
-    max-width: 400px;
-    margin-left: 40px;
+  footer {
+    padding: 30px;
+  }
+  footer div b p {
+    margin-left: 0px;
+    text-align: left;
   }
 }
