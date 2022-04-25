@@ -24,15 +24,5 @@ Route::post('auth/loginAdmin', [AuthController::class, 'loginAdmin']);
 Route::group( ['middleware' =>['auth:sanctum', 'verified']], function () {
     Route::get('auth/user', [AuthController::class, 'user']);
     Route::post('auth/logout', [AuthController::class, 'logout']);
-    Route::post('auth/logout', [AuthController::class, 'logout']);
-    Route::prefix('companies')->group(function () {
-        Route::get('index', [CompanyController::class, 'index']);
-    });
-    Route::prefix('cars')->group(function () {
-        Route::get('index', [CarController::class, 'index']);
-    });
-    Route::prefix('services')->group(function () {
-        Route::get('index', [ServiceController::class, 'index']);
-    });
 });
 

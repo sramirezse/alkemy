@@ -20661,8 +20661,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     maxFiles: Number(10000000000),
     url: "http://localhost:5000/item",
     uploadOnDrop: true,
-    multipleUpload: true,
-    parallelUpload: 3
+    multipleUpload: false,
+    parallelUpload: 1
   }, null, 8
   /* PROPS */
   , ["maxFiles"])]);
@@ -20883,29 +20883,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }
       }, _callee3);
-    }))();
-  },
-  getClients: function getClients(payload) {
-    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
-        while (1) {
-          switch (_context4.prev = _context4.next) {
-            case 0:
-              _context4.next = 2;
-              return _plugins_axios__WEBPACK_IMPORTED_MODULE_1__["default"].get('/clients', payload);
-
-            case 2:
-              response = _context4.sent;
-              console.log('getClients', response);
-              return _context4.abrupt("return", response);
-
-            case 5:
-            case "end":
-              return _context4.stop();
-          }
-        }
-      }, _callee4);
     }))();
   }
 });
