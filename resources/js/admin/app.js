@@ -15,9 +15,9 @@ import Layout from './layout/Index.vue';
 // import 'sweetalert2/dist/sweetalert2.min.css';
 
 // import CKEditor from '@ckeditor/ckeditor5-vue';
-// import DropZone from 'dropzone-vue';
+import DropZone from 'dropzone-vue';
 // // optionally import default styles
-// import 'dropzone-vue/dist/dropzone-vue.common.css';
+import 'dropzone-vue/dist/dropzone-vue.common.css';
 
 // import vSelect from 'vue-select';
 // import "vue-select/dist/vue-select.css";
@@ -37,6 +37,7 @@ const app = createApp({
 })
 app.use(store);
 app.use(router);
+app.use(DropZone);
 app.component('Layout', Layout);
 app.component('Table', Table);
 app.component('Search', Search);

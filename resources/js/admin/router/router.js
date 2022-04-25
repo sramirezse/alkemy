@@ -9,7 +9,13 @@ const routes = [
     { path: '/login', name: 'Login', component: Login },
     {
         path: '/dashboard',
-        name: 'Dashboard',
+        name: 'Slider Principal',
+        component: Index,
+        meta: { sidebar: 1, role: 1, icon: 'dashboard' }
+    },
+    {
+        path: '/dashboard',
+        name: 'Cards',
         component: Index,
         meta: { sidebar: 1, role: 1, icon: 'dashboard' }
     },
