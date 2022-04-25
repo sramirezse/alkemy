@@ -5,20 +5,20 @@
             <div class="col-lg-2"></div>
             <div class="d-flex align-items-start flex-column bd-highlight mb-3 section4-card card1 d-flex container col-lg-3 col-md-12">
                 <div class="paraph mb-auto p-2">
-                    <span><img class="section4-rows-icon" src="images/icon_molecule-green.png" alt=""></span>
-                    <h4>Enfermedades</h4>
-                    <p>Conoce cada una de ellas, sus riesgos, sintomas y cómo prevenirlas.</p>
+                    <span><img class="section4-rows-icon" src={{$cards['card1']['icon']}} alt=""></span>
+                    <h4>{{$cards['card1']['h4']}}</h4>
+                    <p>{{$cards['card1']['p']}}</p>
                 </div>
 
-                <button class="  btn btn-rounded btn-warning text-light">Conoce más</button>
+                <a href={{$cards["card2"]['a']['url']}} class="  btn btn-rounded btn-warning text-light">Conoce más</a>
             </div>
             <div class="d-flex align-items-start flex-column bd-highlight mb-3 section4-card card2 container col-lg-5 col-md-12">
                 <div class="paraph mb-auto p-2">
-                    <span><img class="section4-rows-icon" src="images/icon_article-orange.png" alt=""></span>
-                    <h4>Artículos</h4>
-                    <p>Descubre las noticias e información sobre la importancia de las vacunas.</p>
+                    <span><img class="section4-rows-icon" src={{$cards["card2"]['icon']}} alt=""></span>
+                    <h4>{{$cards['card2']['h4']}}</h4>
+                    <p>{{$cards['card2']['p']}}</p>
                 </div>
-                <button class="btn btn-rounded btn-warning text-light">Conoce más</button>
+                <a  href={{$cards["card2"]['a']['url']}} class="btn btn-rounded btn-warning text-light">{{$cards["card2"]['a']['text']}}</a>
             </div>
             <div class="col-lg-2"></div>
 

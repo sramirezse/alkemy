@@ -17,30 +17,32 @@ class SectionSeeder extends Seeder
     {
         DB::table('sections')->insert(
             [
-                'id' => 1,
-                'name' => 'Section1',
-                'slug' => 'section1',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Section2',
-                'slug' => 'section2',
-            ],
-            [
-                'id' => 3,
-                'name' => 'Section3',
-                'slug' => 'section3',
-            ],
-            [
-                'id' => 4,
-                'name' => 'Section4',
-                'slug' => 'section4',
-            ],
-            [
-                'id' => 5,
-                'name' => 'Footer',
-                'slug' => 'footer',
-            ],
+                [
+                    'id' => 1,
+                    'name' => 'Section1',
+                    'slug' => 'section1',
+                ],
+                [
+                    'id' => 2,
+                    'name' => 'Section2',
+                    'slug' => 'section2',
+                ],
+                [
+                    'id' => 3,
+                    'name' => 'Section3',
+                    'slug' => 'section3',
+                ],
+                [
+                    'id' => 4,
+                    'name' => 'Section4',
+                    'slug' => 'section4',
+                ],
+                [
+                    'id' => 5,
+                    'name' => 'Footer',
+                    'slug' => 'footer',
+                ],
+            ]
         );
         $section1 = [
             'images' => [
@@ -136,30 +138,32 @@ class SectionSeeder extends Seeder
         ];
         DB::table('section_contents')->insert(
             [
-                'id' => 1,
-                'section_id' => 1,
-                'content' => json_encode($section1)
-            ],
-            [
-                'id' => 2,
-                'section_id' => 2,
-                'content' => json_encode($section2)
-            ],
-            [
-                'id' => 3,
-                'section_id' => 3,
-                'content' => json_encode($section3)
-            ],
-            [
-                'id' => 4,
-                'section_id' => 4,
-                'content' => json_encode($section4)
-            ],
-            [
-                'id' => 5,
-                'section_id' => 5,
-                'content' => json_encode($footer)
-            ],
+                [
+                    'id' => 1,
+                    'section_id' => 1,
+                    'content' => json_encode($section1)
+                ],
+                [
+                    'id' => 2,
+                    'section_id' => 2,
+                    'content' => json_encode($section2)
+                ],
+                [
+                    'id' => 3,
+                    'section_id' => 3,
+                    'content' => json_encode($section3)
+                ],
+                [
+                    'id' => 4,
+                    'section_id' => 4,
+                    'content' => json_encode($section4)
+                ],
+                [
+                    'id' => 5,
+                    'section_id' => 5,
+                    'content' => json_encode($footer)
+                ],
+            ]
         );
     }
 }
