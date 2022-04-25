@@ -16,6 +16,7 @@
     @include('home.section1')
     @include('home.section2')
     @include('home.section3')
+    <img class="section3-molecule" src="images/molecule_gray.png" alt="">
     @include('home.section4')
     @include('home.layout.footer')
     <script src="{{ mix('js/home.js') }}"></script>

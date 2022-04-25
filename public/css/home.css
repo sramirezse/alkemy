@@ -11488,7 +11488,24 @@ footer p {
   width: 20px;
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1600px) {
+  .section3 {
+    height: 90vh;
+    background-position: center;
+  }
+
+  .section3-molecule {
+    top: 230% !important;
+  }
+
+  .section4-girl {
+    z-index: 2;
+    position: relative;
+    bottom: 45px;
+    margin-left: 17%;
+  }
+}
+@media screen and (max-width: 1400px) {
   .section3 {
     height: 90vh;
     background-position: center;
@@ -11506,6 +11523,15 @@ footer p {
   }
 }
 @media screen and (max-width: 500px) {
+  .section2-card {
+    height: 300px;
+    padding: 10px;
+  }
+  .section2-card p {
+    color: white;
+    height: 100px;
+  }
+
   .section3 {
     height: 100vh;
     padding: 20px;
@@ -11513,5 +11539,10 @@ footer p {
 
   .section3-molecule {
     display: none;
+  }
+
+  .footer div {
+    max-width: 400px;
+    margin-left: 40px;
   }
 }

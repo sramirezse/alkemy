@@ -17,4 +17,4 @@
 
     </div>
 </div>
-<img class="section3-molecule" src="images/molecule_gray.png" alt="">
+
