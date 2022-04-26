@@ -19657,6 +19657,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     id: {
@@ -19678,8 +19680,12 @@ __webpack_require__.r(__webpack_exports__);
     save_button_text: {
       type: String,
       "default": ""
+    },
+    closeAction: {
+      type: Function
     }
-  }
+  },
+  setup: function setup(props) {}
 });
 
 /***/ }),
@@ -19931,14 +19937,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 
@@ -19972,10 +19977,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }).then(function () {
                   // window.location.reload();
                   fetchImages();
-                  $('#modal-default').modal('toggle');
-                  console.log('refs', imagesDropzone);
+                  $("#modal-default").modal("toggle"); // console.log('refs', imagesDropzone);
+                  // imagesDropzone.value.all = {};
+
+                  // console.log('refs', imagesDropzone);
+                  // imagesDropzone.value.all = {};
+                  var keys = Object.keys(imagesDropzone.value.all);
+                  var images = imagesDropzone.value.all[keys[0]];
                   imagesDropzone.value.all = {};
-                  console.log('refs', imagesDropzone.value.all);
+                  console.log("refs", images);
+                  images = {
+                    accepted: false,
+                    file: {
+                      lastModified: 0,
+                      name: "",
+                      size: "",
+                      type: "",
+                      webkitRelativePath: ""
+                    },
+                    id: "",
+                    status: "",
+                    thumbnail: "",
+                    upload: {
+                      progress: 0
+                    }
+                  };
+                  console.log("refs", images);
                   return true;
                 });
 
@@ -20030,6 +20057,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       form.path = image.path;
     };
 
+    var clearData = function clearData() {
+      form.edit = false;
+      form.index = null;
+      form.alt = "";
+      form.path = "";
+    };
+
     var onFileRemove = /*#__PURE__*/function () {
       var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(file) {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
@@ -20037,8 +20071,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context3.prev = _context3.next) {
               case 0:
                 console.log(file);
+                console.log("refs", images);
 
-              case 1:
+              case 2:
               case "end":
                 return _context3.stop();
             }
@@ -20094,6 +20129,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }).then(function () {});
 
               case 2:
+                clearData();
+
+              case 3:
               case "end":
                 return _context5.stop();
             }
@@ -20116,6 +20154,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       editAlt: editAlt,
       onFileAdd: onFileAdd,
       onFileRemove: onFileRemove,
+      clearData: clearData,
       images: (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
         return store.state.sections.section1.images;
       }),
@@ -20297,21 +20336,17 @@ var _hoisted_5 = {
 };
 var _hoisted_6 = ["id"];
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "close",
-  "data-dismiss": "modal",
-  "aria-label": "Close"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "aria-hidden": "true"
-}, "×")], -1
+}, "×", -1
 /* HOISTED */
 );
 
-var _hoisted_8 = {
+var _hoisted_8 = [_hoisted_7];
+var _hoisted_9 = {
   "class": "modal-body"
 };
-var _hoisted_9 = {
+var _hoisted_10 = {
   "class": "modal-footer"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -20334,7 +20369,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: $props.id + 'Title'
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 9
   /* TEXT, PROPS */
-  , _hoisted_6), _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "body")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "buttons")])])])], 8
+  , _hoisted_6), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
+    "class": "close",
+    "data-dismiss": "modal",
+    "aria-label": "Close",
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $props.closeAction && $props.closeAction.apply($props, arguments);
+    })
+  }, _hoisted_8)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "body")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "buttons")])])])], 8
   /* PROPS */
   , _hoisted_2)], 64
   /* STABLE_FRAGMENT */
@@ -20645,39 +20688,34 @@ var _hoisted_10 = {
 var _hoisted_11 = ["src"];
 var _hoisted_12 = ["disabled"];
 var _hoisted_13 = {
-  type: "button",
-  "class": "btn btn-secondary",
-  "data-dismiss": "modal"
+  "class": "row"
 };
 var _hoisted_14 = {
-  "class": "row"
-};
-var _hoisted_15 = {
   "class": "card"
 };
-var _hoisted_16 = {
+var _hoisted_15 = {
   "class": "card-header card-header-primary"
 };
-var _hoisted_17 = {
+var _hoisted_16 = {
   "class": "card-title"
 };
-var _hoisted_18 = {
+var _hoisted_17 = {
   "class": "card-body"
 };
-var _hoisted_19 = ["src", "alt"];
-var _hoisted_20 = {
+var _hoisted_18 = ["src", "alt"];
+var _hoisted_19 = {
   "class": "card-footer"
 };
-var _hoisted_21 = {
+var _hoisted_20 = {
   "class": "container"
 };
-var _hoisted_22 = {
+var _hoisted_21 = {
   "class": "row"
 };
+var _hoisted_22 = ["onClick"];
 var _hoisted_23 = ["onClick"];
-var _hoisted_24 = ["onClick"];
 
-var _hoisted_25 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_24 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, null, -1
   /* HOISTED */
   );
@@ -20691,7 +20729,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Modal, {
     title: "Añadir banners",
     button_modal_text: "Añadir",
-    close_button_text: "Cerrar"
+    close_button_text: "Cerrar",
+    closeAction: $setup.clearData
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createSlots)({
     body: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [$setup.form.edit == false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -20703,7 +20742,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 512
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.alt]])]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DropZone, {
-        maxFiles: 1,
+        maxFiles: 4,
         uploadOnDrop: false,
         multipleUpload: false,
         parallelUpload: 1,
@@ -20744,25 +20783,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         disabled: $setup.form.edit == false
       }, " Guardar ", 8
       /* PROPS */
-      , _hoisted_12), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.close_button_text), 1
+      , _hoisted_12), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+        type: "button",
+        "class": "btn btn-secondary",
+        onClick: _cache[3] || (_cache[3] = function () {
+          return $setup.clearData && $setup.clearData.apply($setup, arguments);
+        }),
+        "data-dismiss": "modal"
+      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.close_button_text), 1
       /* TEXT */
       )])];
     })
-  } : undefined]), 1024
-  /* DYNAMIC_SLOTS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.images, function (image, index) {
+  } : undefined]), 1032
+  /* PROPS, DYNAMIC_SLOTS */
+  , ["closeAction"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.images, function (image, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "col-md-4",
       key: index
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(image.alt), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(image.alt), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p class=\"category\">Category subtitle</p> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <p class=\"category\">Category subtitle</p> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       "class": "img-fluid",
       src: '/' + image.path,
       alt: image.alt
     }, null, 8
     /* PROPS */
-    , _hoisted_19)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    , _hoisted_18)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       type: "button",
       onClick: function onClick($event) {
         return $setup.editAlt(image, index);
@@ -20772,7 +20818,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "data-target": "#modal-default"
     }, " Editar ", 8
     /* PROPS */
-    , _hoisted_23), $setup.user.role == 'admin' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    , _hoisted_22), $setup.user.role == 'admin' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
       key: 0,
       type: "button",
       onClick: function onClick($event) {
@@ -20781,10 +20827,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "btn btn-danger"
     }, " Eliminar ", 8
     /* PROPS */
-    , _hoisted_24)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]);
+    , _hoisted_23)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), _hoisted_25])]);
+  )), _hoisted_24])]);
 }
 
 /***/ }),

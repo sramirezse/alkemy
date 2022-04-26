@@ -4,6 +4,7 @@
       title="Añadir banners"
       button_modal_text="Añadir"
       close_button_text="Cerrar"
+      :closeAction="clearData"
     >
       <template v-slot:body>
         <div v-if="form.edit == false">
@@ -15,7 +16,7 @@
           <h3 class="text-primary">Arrastra y suelta tu imagen</h3>
           <div class="container">
             <DropZone
-              :maxFiles="1"
+              :maxFiles="4"
               :uploadOnDrop="false"
               :multipleUpload="false"
               :parallelUpload="1"
@@ -48,7 +49,12 @@
           >
             Guardar
           </button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="clearData"
+            data-dismiss="modal"
+          >
             {{ close_button_text }}
           </button>
         </div>
@@ -96,9 +102,8 @@
 </template>
 
 <script>
-import { ref, reactive, toRefs } from "vue";
 import { useStore } from "vuex";
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref, reactive } from "vue";
 export default {
   props: {},
   setup() {
@@ -124,10 +129,31 @@ export default {
         .then(() => {
           // window.location.reload();
           fetchImages();
-          $('#modal-default').modal('toggle');
-          console.log('refs', imagesDropzone);
-          imagesDropzone.value.all = {};
-          console.log('refs', imagesDropzone.value.all);
+          $("#modal-default").modal("toggle");
+          // console.log('refs', imagesDropzone);
+          // imagesDropzone.value.all = {};
+          const keys = Object.keys(imagesDropzone.value.all);
+          let images = imagesDropzone.value.all[keys[0]];
+           imagesDropzone.value.all = {};
+          console.log("refs", images);
+          images = {
+            accepted: false,
+            file: {
+              lastModified: 0,
+              name: "",
+              size: "",
+              type: "",
+              webkitRelativePath: "",
+            },
+            id: "",
+            status: "",
+            thumbnail: "",
+            upload: {
+              progress: 0,
+            },
+          };
+          console.log("refs", images);
+
           return true;
         });
     };
@@ -147,8 +173,15 @@ export default {
       form.alt = image.alt;
       form.path = image.path;
     };
+    const clearData = () => {
+      form.edit = false;
+      form.index = null;
+      form.alt = "";
+      form.path = "";
+    };
     const onFileRemove = async (file) => {
-      console.log(file);
+      console.log(file); 
+      console.log("refs", images);
     };
     const deleteBanner = async (index) => {
       confirm("¿Estas seguro de eliminar este banner?");
@@ -166,10 +199,10 @@ export default {
           },
         })
         .then(() => {});
+      clearData();
     };
     onMounted(() => {
       fetchImages();
-
     });
     return {
       imagesDropzone,
@@ -178,10 +211,11 @@ export default {
       editAlt,
       onFileAdd,
       onFileRemove,
+      clearData,
       images: computed(() => {
         return store.state.sections.section1.images;
       }),
-      user : computed(() => {
+      user: computed(() => {
         return store.state.auth.user;
       }),
       form,
