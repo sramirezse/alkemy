@@ -7,8 +7,11 @@
     >
       <template v-slot:body>
         <div v-if="form.edit == false">
-          <BaseInput label="Alt de la imagen" v-model="form.alt"> </BaseInput>
+          <div class="form-group">
+            <label> Alt de la imagen</label>
 
+            <input class="form-control" type="text" v-model="form.alt" />
+          </div>
           <h3 class="text-primary">Arrastra y suelta tu imagen</h3>
           <div class="container">
             <DropZone
@@ -74,7 +77,14 @@
                 >
                   Editar
                 </button>
-                <button type="button" @click="deleteBanner(index)" class="btn btn-danger">Eliminar</button>
+                <button
+                  type="button"
+                  @click="deleteBanner(index)"
+                  class="btn btn-danger"
+                  v-if="user.role == 'admin'"
+                >
+                  Eliminar
+                </button>
               </div>
             </div>
           </div>
@@ -125,7 +135,7 @@ export default {
       });
       fetchImages();
     };
-    const editAlt = (image,index) => {
+    const editAlt = (image, index) => {
       form.edit = true;
       form.index = index;
       form.alt = image.alt;
@@ -162,6 +172,9 @@ export default {
       onFileRemove,
       images: computed(() => {
         return store.state.sections.section1.images;
+      }),
+      user : computed(() => {
+        return store.state.auth.user;
       }),
       form,
     };

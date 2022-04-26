@@ -21,7 +21,7 @@
         <span class="navbar-toggler-icon icon-bar"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end">
-        <button class="btn btn-danger">Salir</button>
+        <button @click="logout" class="btn btn-danger">Salir</button>
       </div>
     </div>
   </nav>
