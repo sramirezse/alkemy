@@ -310,7 +310,7 @@ footer {
         }
     }
     .section3 {
-        height: 100vh;
+       max-height: 200vh;
         padding: 20px;
     }
 
@@ -328,5 +328,23 @@ footer {
                 }
             }
         }
+    }
+    .collapse.show{
+        padding-top: 100px;
+        max-height: 200vh;
+        background-color: white;
+        ul{
+            li{
+                padding: 15px;
+                width: 300px!important;
+            }
+            li:hover{
+                a{
+                    color: white !important;
+                }
+                background-color: #0f5f84; 
+           }
+        }
+    
     }
 }

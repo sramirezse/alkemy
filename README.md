@@ -1,9 +1,11 @@
 # Vacunas by kratoxx
-## _created for an alkemy test_
+## _Created for an alkemy test_
 
 Vacunas by kratoxx is a little cms created for a test to enter alkemy.
 
-- Made in Laravel 9, Vuejs 3, Bootstrap5, SASS
+- Made in Laravel 9, Vuejs 3, Bootstrap 5, SASS, Webpack
+- Vuex & VueRouter
+- Material Dashboard
 - Self-managing
 
 
@@ -13,11 +15,9 @@ Vacunas by kratoxx is a little cms created for a test to enter alkemy.
 - Drag and drop images
 - Fetch AJAX without reload page
 
-## Instructions
-
 ## Installation
 
-Open the terminal and type:
+Open the terminal, go to route project's folder and type:
 
 ```sh
 composer install

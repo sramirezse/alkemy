@@ -259,7 +259,7 @@ footer .container-icons {
   }
 
   .section3 {
-    height: 100vh;
+    max-height: 200vh;
     padding: 20px;
   }
 
@@ -273,5 +273,21 @@ footer .container-icons {
   footer div b p {
     margin-left: 0px;
     text-align: left;
+  }
+
+  .collapse.show {
+    padding-top: 100px;
+    max-height: 200vh;
+    background-color: white;
+  }
+  .collapse.show ul li {
+    padding: 15px;
+    width: 300px !important;
+  }
+  .collapse.show ul li:hover {
+    background-color: #0f5f84;
+  }
+  .collapse.show ul li:hover a {
+    color: white !important;
   }
 }
