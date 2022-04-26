@@ -31,6 +31,30 @@ export const actions = {
             commit('LOGOUT')
         }
     },
+    async updateBanner({ commit }, payload) {
+        try {
+            const {data} = await sectionsapi.updateBanner(payload);
+            console.log('this form', data);
+            commit('FETCH_SECTION1', data);
+            return data;
+
+        } catch (err) {
+            console.log('error', err);
+            commit('LOGOUT')
+        }
+    },
+    async deleteBanner({ commit }, payload) {
+        try {
+            const {data} = await sectionsapi.deleteBanner(payload);
+            console.log('this form', data);
+            commit('FETCH_SECTION1', data);
+            return data;
+
+        } catch (err) {
+            console.log('error', err);
+            commit('LOGOUT')
+        }
+    },
     async fetchSection1({ commit, dispatch }, payload) {
         try {
             const {data} = await sectionsapi.fetchSection1(payload);

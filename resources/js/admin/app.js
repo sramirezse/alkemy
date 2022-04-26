@@ -16,7 +16,7 @@ import 'dropzone-vue/dist/dropzone-vue.common.css';
 
 import Pagination from 'v-pagination-3';
 import Modal from './components/Modal.vue';
-
+import BaseInput from './components/Input.vue';
 
 //chartJs
 // import { Chart, registerables } from 'chart.js';
@@ -29,8 +29,6 @@ app.use(store);
 app.use(router);
 app.use(DropZone);
 app.component('Layout', Layout);
-app.component('Table', Table);
-app.component('Search', Search);
 app.component('Modal', Modal);
-app.component('Pagination', Pagination);
+app.component('BaseInput', BaseInput);
 app.mount('#adapp');

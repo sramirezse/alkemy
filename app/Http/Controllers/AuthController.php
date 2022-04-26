@@ -49,6 +49,7 @@ class AuthController extends Controller
             $user['id'] = Auth::user()->id;
             $user['name'] = Auth::user()->name;
             $user['email'] = Auth::user()->email;
+            $user['role'] = Auth::user()->role;
             $user['avatar'] = 'https://ui-avatars.com/api/background=6C5FFC&color=fff?name=' .   Str::snake(Auth::user()->name) ;
 
             return response()->json(['success'=>true,'status' => 200, 'user' => $user]);

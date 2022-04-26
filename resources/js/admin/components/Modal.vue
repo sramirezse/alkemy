@@ -35,12 +35,7 @@
           <slot name="body"></slot>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">
-            {{ close_button_text }}
-          </button>
-          <button v-if="save_button_text != ''" type="button" class="btn btn-primary">
-            {{ save_button_text }}
-          </button>
+          <slot name="buttons"></slot>
         </div>
       </div>
     </div>

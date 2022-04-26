@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SectionController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,7 +21,9 @@ Route::post('auth/loginAdmin', [AuthController::class, 'loginAdmin']);
 Route::group( ['middleware' =>['auth:sanctum', 'verified']], function () {
     Route::get('auth/user', [AuthController::class, 'user']);
     Route::post('auth/logout', [AuthController::class, 'logout']);
-    Route::post('uploadImagesToBanner', [HomeController::class, 'uploadImagesToBanner']);
-    Route::get('fetchImagesToBanner', [HomeController::class, 'fetchImagesToBanner']);
+    Route::post('uploadImagesToBanner', [SectionController::class, 'uploadImagesToBanner']);
+    Route::post('updateBanner', [SectionController::class, 'updateBanner']);
+    Route::post('deleteBanner', [SectionController::class, 'deleteBanner']);
+    Route::get('fetchImagesToBanner', [SectionController::class, 'fetchImagesToBanner']);
 });
 
