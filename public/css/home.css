@@ -77,7 +77,7 @@ p {
 .section2-card {
   text-align: center;
   padding: 20px;
-  max-width: 240px;
+  max-width: 300px;
   width: 270px;
   height: 240px;
   border-radius: 10px;
@@ -93,6 +93,7 @@ p {
 .section2-card p {
   color: white;
   height: 80px;
+  font-size: 1.2rem;
 }
 .section2-card span {
   font-size: 1.5rem;
@@ -125,6 +126,7 @@ p {
 }
 .section3 .container p {
   color: #0b6b9b !important;
+  font-size: 1.3em;
 }
 .section3 .container b {
   color: #0f5f84;
