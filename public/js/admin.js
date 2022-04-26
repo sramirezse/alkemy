@@ -21003,6 +21003,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
       }, _callee4);
     }))();
+  },
+  fetchSection2: function fetchSection2(params) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              _context5.next = 2;
+              return _plugins_axios__WEBPACK_IMPORTED_MODULE_1__["default"].get('fetchCards', params);
+
+            case 2:
+              return _context5.abrupt("return", _context5.sent);
+
+            case 3:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
+    }))();
   }
 });
 
@@ -21685,7 +21705,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
  // state
 
 var state = {
-  section1: {}
+  section1: {},
+  section2: {}
 }; // getters
 
 var getters = {}; // mutations
@@ -21693,6 +21714,9 @@ var getters = {}; // mutations
 var mutations = {
   FETCH_SECTION1: function FETCH_SECTION1(state, payload) {
     state.section1.images = payload;
+  },
+  FETCH_SECTION2: function FETCH_SECTION2(state, payload) {
+    state.section2.cards = payload;
   }
 }; // actions
 
@@ -21831,6 +21855,40 @@ var actions = {
           }
         }
       }, _callee4, null, [[1, 11]]);
+    }))();
+  },
+  fetchSection2: function fetchSection2(_ref5, payload) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee5() {
+      var commit, dispatch, _yield$sectionsapi$fe2, data;
+
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              commit = _ref5.commit, dispatch = _ref5.dispatch;
+              _context5.prev = 1;
+              _context5.next = 4;
+              return _api_sectionsapi__WEBPACK_IMPORTED_MODULE_1__["default"].fetchSection2(payload);
+
+            case 4:
+              _yield$sectionsapi$fe2 = _context5.sent;
+              data = _yield$sectionsapi$fe2.data;
+              console.log('this form', data);
+              commit('FETCH_SECTION2', data);
+              return _context5.abrupt("return", data);
+
+            case 11:
+              _context5.prev = 11;
+              _context5.t0 = _context5["catch"](1);
+              console.log('error', _context5.t0);
+              commit('LOGOUT');
+
+            case 15:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[1, 11]]);
     }))();
   }
 };

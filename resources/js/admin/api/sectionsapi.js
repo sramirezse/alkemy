@@ -28,5 +28,8 @@ export default {
     async fetchSection1(params) {
         return await axios.get('fetchImagesToBanner', params);
     },
+    async fetchSection2(params) {
+        return await axios.get('fetchCards', params);
+    },
 
 }
