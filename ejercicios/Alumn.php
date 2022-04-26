@@ -39,8 +39,8 @@ class Alumn extends Person {
     public function setEdad($edad){
         $this->edad = $edad;
     }
-    public function setCumpleanios($Cumpleaños){
-        $this->Cumpleaños = $Cumpleaños;
+    public function setCumpleanios($Cumpleanios){
+        $this->Cumpleaños = $Cumpleanios;
     }
 
 }
