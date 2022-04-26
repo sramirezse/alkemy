@@ -16,7 +16,7 @@
           <h3 class="text-primary">Arrastra y suelta tu imagen</h3>
           <div class="container">
             <DropZone
-              :maxFiles="4"
+              :maxFiles="20"
               :uploadOnDrop="false"
               :multipleUpload="false"
               :parallelUpload="1"
