@@ -19973,7 +19973,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   // window.location.reload();
                   fetchImages();
                   $('#modal-default').modal('toggle');
-                  console.log('refs', imagesDropzone.value);
+                  console.log('refs', imagesDropzone);
+                  imagesDropzone.value.all = {};
+                  console.log('refs', imagesDropzone.value.all);
                   return true;
                 });
 
@@ -20108,6 +20110,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       fetchImages();
     });
     return {
+      imagesDropzone: imagesDropzone,
       updateBanner: updateBanner,
       deleteBanner: deleteBanner,
       editAlt: editAlt,

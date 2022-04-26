@@ -125,7 +125,9 @@ export default {
           // window.location.reload();
           fetchImages();
           $('#modal-default').modal('toggle');
-          console.log('refs', imagesDropzone.value);
+          console.log('refs', imagesDropzone);
+          imagesDropzone.value.all = {};
+          console.log('refs', imagesDropzone.value.all);
           return true;
         });
     };
@@ -170,6 +172,7 @@ export default {
 
     });
     return {
+      imagesDropzone,
       updateBanner,
       deleteBanner,
       editAlt,
