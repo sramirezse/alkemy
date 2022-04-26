@@ -14,7 +14,7 @@ const routes = [
         meta: { sidebar: 1, role: 1, icon: 'dashboard' }
     },
     {
-        path: '/dashboard',
+        path: '/cards',
         name: 'Cards',
         component: Index,
         meta: { sidebar: 1, role: 1, icon: 'dashboard' }

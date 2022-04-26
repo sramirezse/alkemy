@@ -34,7 +34,7 @@ export default {
     const getUser = async () => {
         if (store.getters["auth/isLoggedIn"] ==="true")
             await store.dispatch("auth/fetchUser");
-            console.log('store lo hice bitch');
+            console.log('store lo hice');
     };
     onMounted(() => {
         getUser();

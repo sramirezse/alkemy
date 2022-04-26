@@ -11,4 +11,5 @@ class SectionContent extends Model
     protected $casts = [
         "content" => "array"
    ];
+   
 }

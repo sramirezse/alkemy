@@ -13,6 +13,15 @@ p {
   transform: translatex(-50%);
 }
 
+.collapse.show {
+  padding-top: 100px;
+  height: 60vh;
+  background-color: white;
+}
+.collapse.show ul li {
+  padding: 20px;
+}
+
 .navbar-nav .nav-link {
   color: #0b6b9b !important;
   font-family: gilroy-bold;
@@ -67,6 +76,7 @@ p {
 .section2-card {
   text-align: center;
   padding: 20px;
+  max-width: 240px;
   width: 270px;
   height: 240px;
   border-radius: 10px;
@@ -193,6 +203,9 @@ footer p {
   width: 600px;
   line-height: 0.7em;
   margin-left: 300px;
+}
+footer .container-icons {
+  max-width: 300px;
 }
 
 .social-icon {

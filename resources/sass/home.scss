@@ -13,6 +13,18 @@ p{
     left: 50%;
     transform: translatex(-50%);
 }
+.collapse.show{
+    padding-top: 100px;
+    height: 60vh;
+    background-color: white;
+    ul{
+        li{
+            padding: 20px;
+
+        }
+    }
+
+}
 
 .navbar-nav .nav-link {
     color: #0b6b9b !important;
@@ -72,7 +84,7 @@ p{
 .section2-card {
     text-align: center;
     padding: 20px;
-
+    max-width: 240px;
     h3 {
         font-size: 1.5rem;
         color: white;
@@ -241,6 +253,9 @@ footer {
         width: 600px;
         line-height: .7em;
         margin-left: 300px;
+    }
+    .container-icons{
+        max-width: 300px;
     }
 
 

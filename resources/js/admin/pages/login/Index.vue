@@ -75,9 +75,8 @@ export default {
       const res = await store.dispatch("auth/login", form);
       if (res.data.success == true) {
         window.location.href = "/admin/dashboard";
-      } else {
-        alert("Usuario o contraseña incorrectos");
-      }
+      }alert("Usuario o contraseña incorrectos");
+    
     };
     const printcosas = () => {
       console.log(store.state.auth);
