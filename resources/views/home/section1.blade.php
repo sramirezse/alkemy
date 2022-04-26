@@ -1,9 +1,9 @@
 <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="carousel">
     
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="height: 100vh">
         @foreach ($images as $index => $image)
             <div class="carousel-item @if($index == 0) active @endif" >
-                <img src="{{ asset($image['path']) }}" class="d-block w-100 " style="height: 100vh" alt="...">
+                <img src="{{ asset($image['path']) }}" class="d-block w-100 "  alt="...">
             </div>
         @endforeach
 
