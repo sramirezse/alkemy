@@ -19953,6 +19953,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       path: "",
       index: null
     });
+    var imagesDropzone = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
 
     var onFileAdd = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(file) {
@@ -19969,7 +19970,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   alt: form.alt,
                   checkbox: form.checkbox
                 }).then(function () {
-                  window.location.reload();
+                  // window.location.reload();
+                  fetchImages();
+                  $('#modal-default').modal('toggle');
+                  console.log('refs', imagesDropzone.value);
                   return true;
                 });
 
@@ -20703,7 +20707,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         acceptedFiles: ['jpg', 'jpeg', 'png', 'gif'],
         onAddedFile: $setup.onFileAdd,
         onRemovedFile: $setup.onFileRemove,
-        ref: "dropzone"
+        ref: "imagesDropzone"
       }, null, 8
       /* PROPS */
       , ["onAddedFile", "onRemovedFile"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button type=\"submit\"  class=\"btn btn-primary\">Enviar</button> ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.form.edit == true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {

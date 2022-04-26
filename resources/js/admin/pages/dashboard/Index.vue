@@ -22,7 +22,7 @@
               :acceptedFiles="['jpg', 'jpeg', 'png', 'gif']"
               @addedFile="onFileAdd"
               @removedFile="onFileRemove"
-              ref="dropzone"
+              ref="imagesDropzone"
             />
           </div>
           <!-- <button type="submit"  class="btn btn-primary">Enviar</button> -->
@@ -110,6 +110,7 @@ export default {
       path: "",
       index: null,
     });
+    const imagesDropzone = ref(null);
     const onFileAdd = async (file) => {
       await store
         .dispatch("sections/uploadImagesToBanner", {
@@ -121,7 +122,10 @@ export default {
           checkbox: form.checkbox,
         })
         .then(() => {
-          window.location.reload();
+          // window.location.reload();
+          fetchImages();
+          $('#modal-default').modal('toggle');
+          console.log('refs', imagesDropzone.value);
           return true;
         });
     };
@@ -163,6 +167,7 @@ export default {
     };
     onMounted(() => {
       fetchImages();
+
     });
     return {
       updateBanner,
