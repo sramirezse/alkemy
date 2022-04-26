@@ -260,6 +260,7 @@ footer .container-icons {
 
   .section3 {
     max-height: 200vh;
+    min-height: 130vh;
     padding: 20px;
   }
 
