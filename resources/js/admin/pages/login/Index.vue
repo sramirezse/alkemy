@@ -43,7 +43,7 @@
           <div class="container-login100-form-btn">
             <button @click="login" class="login100-form-btn">Login</button>
           </div>
-          <div class="text-center pt-1">
+          <!-- <div class="text-center pt-1">
             <a class="txt2" href="#"> ¿Usuario / Contraseña </a>
             <span class="txt1"> perdida? </span>
           </div>
@@ -52,7 +52,7 @@
               Crear una cuenta
               <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -78,14 +78,9 @@ export default {
       }alert("Usuario o contraseña incorrectos");
     
     };
-    const printcosas = () => {
-      console.log(store.state.auth);
-    };
-
     return {
       form,
       login,
-      printcosas,
     };
   },
 };

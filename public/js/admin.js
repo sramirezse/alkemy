@@ -20231,14 +20231,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       };
     }();
 
-    var printcosas = function printcosas() {
-      console.log(store.state.auth);
-    };
-
     return {
       form: form,
-      login: login,
-      printcosas: printcosas
+      login: login
     };
   }
 });
@@ -20923,9 +20918,6 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_13 = {
   "class": "container-login100-form-btn"
 };
-
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"text-center pt-1\"><a class=\"txt2\" href=\"#\"> ¿Usuario / Contraseña </a><span class=\"txt1\"> perdida? </span></div><div class=\"text-center pt-3\"><a class=\"txt2\" href=\"#\"> Crear una cuenta <i class=\"fa fa-long-arrow-right m-l-5\" aria-hidden=\"true\"></i></a></div>", 2);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     "class": "input100",
@@ -20950,7 +20942,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.login && $setup.login.apply($setup, arguments);
     }),
     "class": "login100-form-btn"
-  }, "Login")]), _hoisted_14])])])]);
+  }, "Login")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"text-center pt-1\">\n            <a class=\"txt2\" href=\"#\"> ¿Usuario / Contraseña </a>\n            <span class=\"txt1\"> perdida? </span>\n          </div>\n          <div class=\"text-center pt-3\">\n            <a class=\"txt2\" href=\"#\">\n              Crear una cuenta\n              <i class=\"fa fa-long-arrow-right m-l-5\" aria-hidden=\"true\"></i>\n            </a>\n          </div> ")])])])]);
 }
 
 /***/ }),
