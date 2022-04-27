@@ -23,7 +23,7 @@ Route::group( ['middleware' =>['auth:sanctum', 'verified']], function () {
     Route::post('auth/logout', [AuthController::class, 'logout']);
     Route::post('uploadImagesToBanner', [SectionController::class, 'uploadImagesToBanner']);
     Route::post('updateBanner', [SectionController::class, 'updateBanner']);
-    Route::post('deleteBanner', [SectionController::class, 'deleteBanner']);
+    Route::post('deleteBanner', [SectionController::class, 'deleteBanner'])->middleware('role');
     Route::get('fetchImagesToBanner', [SectionController::class, 'fetchImagesToBanner']);
 });
 
